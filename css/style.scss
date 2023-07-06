@@ -30,7 +30,7 @@ $white_80: rgba(#fff, 0.8);
 // 重複css
 @mixin flex($j: center, $a: center) {
     display: flex;
-    justify-content: $$j;
+    justify-content: $j;
     align-items: $a;
 }
 // --------------------------

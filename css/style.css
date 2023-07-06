@@ -3,4 +3,10 @@
 * {
   font-family: "Inter", 微軟正黑體, sans-serif;
   box-sizing: border-box;
+}
+
+.material-icons {
+  font-family: "Material Icons";
+  font-size: 24px;
+  white-space: nowrap;
 }/*# sourceMappingURL=style.css.map */
