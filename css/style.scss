@@ -1,0 +1,36 @@
+// 引用字型
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap');
+
+// 全域設定
+* {
+    font-family: 'Inter', 微軟正黑體, sans-serif;
+    box-sizing: border-box;
+}
+.material-icons {
+    font-family: 'Material Icons';
+    font-size: 24px;
+    white-space: nowrap;
+}
+
+// --------------------------
+// 色票定義
+$primary-color: #AC9E91;
+$secondary-color: #E40505;
+$brown_deep: #A78667;
+$brown_light: #F1ECE8;
+$white: #fff;
+$black: #32302C;
+$grey66: #666666;
+$grey9F: #9F9F9F;
+$greyD4: #D4D4D4;
+$greyE9: #E9E9E9;
+$greyF7: #F7F7F7;
+$white_80: rgba(#fff, 0.8);
+// --------------------------
+// 重複css
+@mixin flex($j: center, $a: center) {
+    display: flex;
+    justify-content: $$j;
+    align-items: $a;
+}
+// --------------------------
