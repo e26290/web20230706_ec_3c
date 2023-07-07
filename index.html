@@ -5,21 +5,221 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>REAICE 3C購物網</title>
 
+    <!-- 引入BS5 -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
       crossorigin="anonymous"
     />
+    <!-- 引入google font -->
     <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
     />
+    <!-- 引入slick輪播套件 -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-3.5.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"
+    ></script>
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <div id="app">
-      <p>TEST123</p>
+      <!-- 頂部資訊條 -->
+      <div class="topArea">
+        <div class="container">
+          <div class="textBox">
+            訂單金額滿 $800，即可享有免運服務
+            <span class="material-symbols-outlined"> chevron_right </span>
+          </div>
+        </div>
+      </div>
+
+      <!-- header -->
+      <header>
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <div class="container">
+            <a class="navbar-brand" href="#">
+              <img src="images/logo.svg" alt="" />
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle active"
+                    href="#"
+                    id="navbarDropdownMenuLink"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    商品一覽
+                  </a>
+                  <ul
+                    class="dropdown-menu"
+                    aria-labelledby="navbarDropdownMenuLink"
+                  >
+                    <li><a class="dropdown-item" href="#">手機線材</a></li>
+                    <li>
+                      <a class="dropdown-item" href="#">充電器</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">直播專區</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">車用專區</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">耳機專區</a>
+                    </li>
+                    <li>
+                      <a class="dropdown-item" href="#">視聽專區</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">關於REAICE</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">聯絡我們</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link">主題企劃</a>
+                </li>
+                <div class="searchbar">
+                  <span class="material-symbols-outlined"> search </span>
+                  <input type="text" placeholder="搜尋商品" />
+                </div>
+              </ul>
+              <ul class="userTools">
+                <div class="like">
+                  <span class="material-symbols-outlined"> favorite </span>
+                </div>
+                <div class="signin">
+                  <img src="images/ic-person.svg" alt="登入註冊" />
+                  登入／註冊
+                </div>
+                <div class="cart">
+                  <img src="images/ic-cart.svg" alt="購物車" />
+                  <div class="number">0</div>
+                </div>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- banner -->
+      <div class="banner">
+        <!-- 標題 -->
+        <div class="container">
+          <div class="titleBox">
+            <div class="titleBox-bg"></div>
+            <div class="flex">
+              <h1>一點優しい方法</h1>
+              <h1>で世界</h1>
+            </div>
+            <h1>と系げます。</h1>
+            <div class="searchbar">
+              <span class="material-symbols-outlined"> search </span>
+              <input type="text" placeholder="搜尋商品" />
+            </div>
+          </div>
+        </div>
+
+        <!-- banner輪播 -->
+        <div class="slider">
+          <div class="slick-slide">
+            <img src="images/banner-01.png" />
+          </div>
+          <div class="slick-slide">
+            <img src="images/banner-02.png" />
+          </div>
+          <div class="slick-slide">
+            <img src="images/banner-03.png" />
+          </div>
+        </div>
+      </div>
+
+      <!-- items -->
+      <div class="items">
+        <div class="container">
+          <div class="subTitle">
+            <span class="material-symbols-outlined">redeem</span>
+            依據商品類別
+          </div>
+          <ul class="itemList">
+            <li v-for="data in itemsData">
+              <img :src="data.img" :alt="data.name" />
+              {{ data.name }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- newProd -->
+      <div class="newProd">
+        <div class="container">
+          <div class="subTitle">
+            <span class="material-symbols-outlined"> sell </span>
+            最新推出
+          </div>
+          <div class="newProd-bg"></div>
+
+          <ul class="newList">
+            <li>
+              <img src="" alt="" />
+            </li>
+          </ul>
+          <!-- 商品輪播 -->
+          <div class="responsive">
+            <div class="slick-slide" v-for="data in newProdData">
+              <img :src="data.img" />
+              <div class="content">
+                <p class="name">{{ data.name }}</p>
+                <div class="evaluate">
+                  <div class="stars"></div>
+                  {{ data.starTotal }} ({{ data.starNum }})
+                </div>
+                <span class="price">${{ data.price }}</span>
+              </div>
+            </div>
+            <div class="slick-slide">
+              <img src="images/pic-01.png" />
+            </div>
+            <div class="slick-slide">
+              <img src="images/pic-01.png" />
+            </div>
+            <div class="slick-slide">
+              <img src="images/pic-01.png" />
+            </div>
+            <div class="slick-slide">
+              <img src="images/pic-01.png" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- JS -->
     <script
@@ -28,8 +228,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="js/javascript.js"></script>
 
     <!-- vue -->
     <script>
