@@ -186,40 +186,145 @@
             最新推出
           </div>
           <div class="newProd-bg"></div>
-
-          <ul class="newList">
-            <li>
-              <img src="" alt="" />
-            </li>
-          </ul>
           <!-- 商品輪播 -->
           <div class="responsive">
             <div class="slick-slide" v-for="data in newProdData">
-              <img :src="data.img" />
+              <a href="#"><img :src="data.img" /></a>
               <div class="content">
                 <p class="name">{{ data.name }}</p>
                 <div class="evaluate">
-                  <div class="stars"></div>
-                  {{ data.starTotal }} ({{ data.starNum }})
+                  <div class="stars">{{ data.star }}</div>
+                  {{ data.starTotal.toFixed(1) }}
+                  <span>({{ data.starNum }})</span>
                 </div>
                 <span class="price">${{ data.price }}</span>
               </div>
             </div>
-            <div class="slick-slide">
-              <img src="images/pic-01.png" />
-            </div>
-            <div class="slick-slide">
-              <img src="images/pic-01.png" />
-            </div>
-            <div class="slick-slide">
-              <img src="images/pic-01.png" />
-            </div>
-            <div class="slick-slide">
-              <img src="images/pic-01.png" />
+          </div>
+        </div>
+      </div>
+
+      <!-- cardGroup -->
+      <div class="cardGroup">
+        <div class="container-fluid">
+          <div class="row">
+            <div
+              class="cardBox col-md-6 col-sm-12"
+              v-for="data in cardGroupData"
+            >
+              <img :src="data.img" :alt="data.item" />
+              <div class="card-text">
+                <h3>{{ data.title }}</h3>
+                <a :href="data.link" class="openItem" target="_blank">
+                  選購{{ data.item }}
+                  <span class="material-symbols-outlined"> chevron_right </span>
+                </a>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- hotProd -->
+      <div class="hotProd">
+        <div class="container">
+          <div class="subTitle">
+            <span class="material-symbols-outlined">
+              local_fire_department
+            </span>
+            熱門商品
+          </div>
+          <div class="newProd-bg"></div>
+          <!-- 商品輪播 -->
+          <div class="responsive">
+            <div class="slick-slide" v-for="data in newProdData">
+              <a href="#"><img :src="data.img" /></a>
+              <div class="content">
+                <p class="name">{{ data.name }}</p>
+                <div class="evaluate">
+                  <div class="stars">{{ data.star }}</div>
+                  {{ data.starTotal.toFixed(1) }}
+                  <span>({{ data.starNum }})</span>
+                </div>
+                <span class="price">${{ data.price }}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- video -->
+      <div class="video">
+        <div class="container">
+          <iframe
+            src="https://www.youtube.com/embed/TX9qSaGXFyg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+          <button type="button" class="btn">立即選購</button>
+        </div>
+      </div>
+
+      <!-- info -->
+      <div class="info">
+        <div class="container">
+          <div class="row">
+            <div class="infoBox col-md-4" v-for="data in infoBoxData">
+              <img :src="data.img" alt="data.title" />
+              <div class="info-text">
+                <h6>{{ data.title }}</h6>
+                <p>{{ data.content }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 f_nav">
+              <div v-for="data in f_navData" class="f_navData">
+                <h6>{{ data.title}}</h6>
+                <ul>
+                  <li v-for="item in data.nav"><a href="#">{{ item }}</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-md-4 aboutme">
+              <div class="media">
+                <span>追蹤 REAICE</span>
+                <ul>
+                  <li v-for="data in mediaData">
+                    <img :src="data.img" :alt="data.alt" />
+                  </li>
+                </ul>
+              </div>
+              <div class="contact">
+                <span>407 台中市西屯區台灣大道二段 2 號</span>
+                <span>電話 | 04-22581618</span>
+                <span>信箱 | admin@reaicecom</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="row f_bottom">
+            <div class="col-md-7 coptright">
+              <img src="images/logo_f.svg" alt="logo" />
+              Copyright © 2023, aboos.com, All Rights Reserved.
+            </div>
+            <div class="col-md-5 payment">
+              <img src="images/img-visa.svg" alt="visa" />
+              <img src="images/img-mc.svg" alt="mc" />
+              <img src="images/img-jcb.svg" alt="jcb" />
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
     <!-- JS -->
     <script
@@ -228,7 +333,9 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="js/javascript.js"></script>
+    <script src="js/javascript.js">
+      立即選購
+    </script>
 
     <!-- vue -->
     <script>
