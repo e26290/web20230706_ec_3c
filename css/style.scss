@@ -408,7 +408,7 @@ footer {
     padding: 2.5rem 0 1.5rem;
     background-color: $brown_light;
     .row {
-        @include flex;
+        @include flex(center,flex-start);
         flex-wrap: wrap;
         max-width: 67.24rem;
         margin: 0 auto;

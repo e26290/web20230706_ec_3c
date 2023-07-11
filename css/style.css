@@ -407,7 +407,7 @@ footer {
 footer .row {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   flex-wrap: wrap;
   max-width: 67.24rem;
   margin: 0 auto;
