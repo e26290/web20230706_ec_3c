@@ -27,6 +27,11 @@ $title_bg: linear-gradient(90deg, rgba(255, 255, 255, 0.20) 0%, rgba(255, 255, 2
 @mixin text-shadow {
     filter: drop-shadow(0px 0px 0.25rem rgba(0, 0, 0, 0.12));
 }
+@mixin media-breakpoint-up($size) {
+    @media (min-width: $size) {
+        @content;
+    }
+}
 // --------------------------
 // 全域設定
 * {
@@ -79,7 +84,6 @@ button {
 // topArea
 .topArea {
     background-color: $primary-color;
-
     .textBox {
         @include flex;
         gap: 0.25rem;
@@ -90,6 +94,7 @@ button {
     }
     .textBox span {
         font-size: 1rem;
+        color: $white;
     }
 }
 // --------------------------
@@ -106,6 +111,7 @@ nav {
         .nav-item a {
             font-size: 0.875rem;
             color: $black !important;
+            white-space: nowrap;
         }
         .nav-item a.active {
             color: $secondary-color !important;
@@ -130,6 +136,7 @@ nav {
         .like, .signin {
             @include flex;
             gap: 0.25rem;
+            white-space: nowrap;
         }
         .cart {
             position: relative;
@@ -170,8 +177,9 @@ nav {
         position: absolute;
         top: 50%;
         font-size: 48px;
-        z-index: 2;
+        z-index: 5;
         right: 0;
+        cursor: pointer;
     }
     span.prev:nth-child(1) {
         left: 0;
@@ -437,11 +445,10 @@ footer {
         gap: 1.5rem;
     }
     .media {
-        span {
+        h6 {
             font-size: 0.875rem;
             color: $grey66;
             font-weight: 700;
-            line-height: 150%;
             margin-bottom: 0.5rem;
             display: block;
         }
@@ -476,6 +483,7 @@ footer {
     .coptright {
         font-size: 0.875rem;
         color: $grey66;
+        white-space: nowrap;
         img {
             margin-right: 1rem;
         }
@@ -486,3 +494,12 @@ footer {
     }
 }
 // --------------------------
+
+
+@include media-breakpoint-up(sm) {
+    
+
+    footer .row {
+        // max-width: 100%;
+    }
+}

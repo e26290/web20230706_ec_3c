@@ -38,10 +38,10 @@
       <!-- 頂部資訊條 -->
       <div class="topArea">
         <div class="container">
-          <div class="textBox">
+          <a class="textBox" href="#">
             訂單金額滿 $800，即可享有免運服務
             <span class="material-symbols-outlined"> chevron_right </span>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -171,7 +171,7 @@
           </div>
           <ul class="itemList">
             <li v-for="data in itemsData">
-              <img :src="data.img" :alt="data.name" />
+              <a href="#"><img :src="data.img" :alt="data.name" /></a>
               {{ data.name }}
             </li>
           </ul>
@@ -296,7 +296,7 @@
             </div>
             <div class="col-md-4 aboutme">
               <div class="media">
-                <span>追蹤 REAICE</span>
+                <h6>追蹤 REAICE</h6>
                 <ul>
                   <li v-for="data in mediaData">
                     <img :src="data.img" :alt="data.alt" />

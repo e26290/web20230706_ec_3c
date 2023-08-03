@@ -67,6 +67,7 @@ button:hover {
 }
 .topArea .textBox span {
   font-size: 1rem;
+  color: #fff;
 }
 
 nav {
@@ -87,6 +88,7 @@ nav .navbar-nav {
 nav .navbar-nav .nav-item a {
   font-size: 0.875rem;
   color: #32302C !important;
+  white-space: nowrap;
 }
 nav .navbar-nav .nav-item a.active {
   color: #E40505 !important;
@@ -117,6 +119,7 @@ nav .userTools .like, nav .userTools .signin {
   justify-content: center;
   align-items: center;
   gap: 0.25rem;
+  white-space: nowrap;
 }
 nav .userTools .cart {
   position: relative;
@@ -156,8 +159,9 @@ nav .userTools .cart .number {
   position: absolute;
   top: 50%;
   font-size: 48px;
-  z-index: 2;
+  z-index: 5;
   right: 0;
+  cursor: pointer;
 }
 .slider span.prev:nth-child(1) {
   left: 0;
@@ -441,11 +445,10 @@ footer .aboutme {
   flex-direction: column;
   gap: 1.5rem;
 }
-footer .media span {
+footer .media h6 {
   font-size: 0.875rem;
   color: #666666;
   font-weight: 700;
-  line-height: 150%;
   margin-bottom: 0.5rem;
   display: block;
 }
@@ -480,6 +483,7 @@ footer .f_bottom {
 footer .coptright {
   font-size: 0.875rem;
   color: #666666;
+  white-space: nowrap;
 }
 footer .coptright img {
   margin-right: 1rem;
